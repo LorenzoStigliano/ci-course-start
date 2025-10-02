@@ -6,6 +6,11 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+import os
+import sys
+basedir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'ci_course'))
+sys.path.insert(0, basedir)
+
 project = 'ci-course-start'
 copyright = '2025, Lorenzo Stigliano'
 author = 'Lorenzo Stigliano'
@@ -14,7 +19,10 @@ release = '0.0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon'
+]
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -26,3 +34,4 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+
